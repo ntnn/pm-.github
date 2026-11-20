@@ -1,0 +1,37 @@
+repository:
+
+  # Clean up merged PR branches automatically.
+  delete_branch_on_merge: true
+
+  # Allow auto-merge to merge a PR as soon as CI is green.
+  allow_auto_merge: true
+
+  # Only allow merge and squash merges - rebase is not possible due to
+  # requiring signed commits.
+  allow_merge_commit: true
+  allow_squash_merge: true
+  allow_rebase_merge: false
+
+  # Disable wikis, documentation must be tracked either in-repo or in
+  # the website.
+  has_wiki: false
+
+  # PM only maintains project boards in the backlog repo.
+  has_projects: false
+
+  security_and_analysis:
+    secret_scanning:
+      status: enabled
+    secret_scanning_push_protection:
+      status: enabled
+
+# Each team gets write to each repository - rulesets are restricting access.
+teams:
+  - name: contributors
+    permission: push
+  - name: go-maintainers
+    permission: push
+  - name: node-maintainers
+    permission: push
+  - name: tsc
+    permission: push

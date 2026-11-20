@@ -1,0 +1,4 @@
+restrictedRepos:
+  exclude:
+    # temporary
+    - .github
